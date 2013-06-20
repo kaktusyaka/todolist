@@ -26,6 +26,7 @@ gem 'simple_form'
 group :development do
   gem "better_errors"
   gem 'debugger'
+  gem "erb2haml"
 end
 
 group :development, :test do
