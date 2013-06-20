@@ -26,6 +26,7 @@ gem 'inherited_resources'
 
 group :development do
   gem "better_errors"
+  gem 'binding_of_caller'
   gem 'debugger'
   gem "erb2haml"
 end
@@ -39,6 +40,7 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'cucumber-rails', :require => false
-  gem 'launchy'
   gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'faker'
 end
