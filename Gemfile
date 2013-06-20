@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,34 +16,27 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'thin'
+gem 'haml-rails'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'cancan'
+gem 'simple_form'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem "better_errors"
+  gem 'debugger'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-gem "thin", ">= 1.5.0"
-gem "haml-rails", ">= 0.4"
-gem "html2haml", ">= 1.0.1", :group => :development
-gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
-gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
-gem "email_spec", ">= 1.4.0", :group => :test
-gem "cucumber-rails", ">= 1.3.1", :group => :test, :require => false
-gem "launchy", ">= 2.2.0", :group => :test
-gem "capybara", ">= 2.0.3", :group => :test
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.3.0.0"
-gem "devise", ">= 2.2.3"
-gem "cancan", ">= 1.6.9"
-gem "rolify", ">= 3.2.0"
-gem "simple_form", ">= 2.1.0"
+group :test do
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'cucumber-rails', :require => false
+  gem 'launchy'
+  gem 'capybara'
+end
