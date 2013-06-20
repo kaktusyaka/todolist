@@ -6,6 +6,7 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'rspec/rails'
 require 'shoulda/matchers/integrations/rspec'
+require 'validates_timeliness'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 RSpec.configure do |config|

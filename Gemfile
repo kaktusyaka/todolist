@@ -23,15 +23,16 @@ gem 'devise'
 gem 'cancan'
 gem 'simple_form'
 gem 'inherited_resources'
+gem 'validates_timeliness'
 
 group :development do
   gem "better_errors"
   gem 'binding_of_caller'
-  gem 'debugger'
   gem "erb2haml"
 end
 
 group :development, :test do
+  gem 'debugger'
   gem "rspec-rails"
   gem "factory_girl_rails"
 end
