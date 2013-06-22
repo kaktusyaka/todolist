@@ -4,10 +4,11 @@
                             validate: true ) do |f|
   %h2.form-signin-heading Sign up
   = f.error_notification
-  = f.input :email, required: true, autofocus: true, placeholder: 'Email address',
+  = f.input :email, autofocus: true, placeholder: 'Email address', validate: { presence: true },
                     input_html: { class: 'input-block-level' }
-  = f.input :password, required: true, placeholder: 'Password', input_html: { class: 'input-block-level' }
-  = f.input :password_confirmation, required: true, placeholder: 'Password confirmation',
+  = f.input :password, placeholder: 'Password', input_html: { class: 'input-block-level' },
+                       validate: { presence: true }
+  = f.input :password_confirmation, placeholder: 'Password confirmation', validate: { presence: true },
                                     input_html: { class: 'input-block-level' }
   = render "devise/shared/links"
   %br

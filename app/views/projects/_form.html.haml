@@ -1,5 +1,5 @@
 = simple_form_for project, validate: true, remote: true, html: { class: 'form-horizontal' } do |f|
-  = f.input :name, autofocus: true, placeholder: 'TODO Name'
+  = f.input :name, placeholder: 'TODO Name'
   .modal-footer
     %button.btn{ :'aria-hidden' => true, :'data-dismiss' => :modal } Close
     = f.button :submit, class: 'btn btn-primary', value: 'Save'

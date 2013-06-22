@@ -4,8 +4,9 @@
                             validate: true ) do |f|
   %h2.form-signin-heading Sign in
   = f.input :email, required: false, autofocus: true, placeholder: 'Email address',
-                    input_html: { class: 'input-block-level' }
-  = f.input :password, required: false, input_html: { class: 'input-block-level' }, placeholder: 'Password'
+                    input_html: { class: 'input-block-level' }, validate: { presence: true }
+  = f.input :password, required: false, input_html: { class: 'input-block-level' }, placeholder: 'Password',
+                       validate: { presence: true }
   = f.input :remember_me, as: :boolean, inline_label: 'Remember Me', label: false
   = render "devise/shared/links"
   %br
