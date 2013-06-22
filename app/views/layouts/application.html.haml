@@ -8,6 +8,7 @@
     = csrf_meta_tags
   %body
     .container
+      = link_to "Sign out", destroy_user_session_path, method: :delete
       = render 'layouts/flash_messages'
       = yield
     = javascript_include_tag "application"
