@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20130620164019) do
     t.string   "name"
     t.date     "deadline"
     t.boolean  "finish",     :default => false, :null => false
+    t.integer  "priority",   :default => 1
+    t.integer  "integer",    :default => 1
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end

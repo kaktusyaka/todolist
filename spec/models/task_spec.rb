@@ -11,11 +11,13 @@ describe Task do
     it { should validate_presence_of(:project) }
     it { should validate_presence_of(:name) }
     it { should ensure_length_of(:name).is_at_most(255) }
+    it { should validate_numericality_of(:priority).only_integer }
 
     it { should allow_mass_assignment_of(:project_id) }
     it { should allow_mass_assignment_of(:name) }
     it { should allow_mass_assignment_of(:deadline) }
     it { should allow_mass_assignment_of(:finish) }
+    it { should allow_mass_assignment_of(:priority) }
 
     context 'should be valid' do
       subject { FactoryGirl.build(:task) }
