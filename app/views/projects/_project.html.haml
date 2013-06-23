@@ -1,4 +1,8 @@
-%div{ id: dom_id(project) }
-  %h4= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
-  = link_to 'Edit', 'javascript:;', id: "edit_#{dom_id(project)}"
-  = link_to 'Destroy', project, method: :delete, remote: true, confirm: 'Are you sure?'
+%div{ class: 'project', id: dom_id(project) }
+  .project_header
+    .span1
+    .span9
+      .project_name= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
+    .span2
+      = link_to 'Edit', 'javascript:;', id: "edit_#{dom_id(project)}"
+      = link_to 'Destroy', project, method: :delete, remote: true, confirm: 'Are you sure?'
