@@ -7,11 +7,53 @@
   .project
     margin-bottom: 40px
 
-    .project_header
-      background: rgb(70,118,178)
-      min-height: 35px
-      height: auto
+    .project-header
+      /* Firefox v3.6+
+      background-image: -moz-linear-gradient(37% 0% -90deg, rgb(81, 131, 190) 0%, rgb(55, 93, 158) 99%)
+      /* safari v4.0+ and by Chrome v3.0+
+      background-image: -webkit-gradient(linear, 37% 0%, 37% 100%, color-stop(0, rgb(81, 131, 190)), color-stop(0.99, rgb(55, 93, 158)))
+      /* Chrome v10.0+ and by safari nightly build
+      background-image: -webkit-linear-gradient(-90deg, rgb(81, 131, 190) 0%, rgb(55, 93, 158) 99%)
+      /* Opera v11.10+
+      background-image: -o-linear-gradient(-90deg, rgb(81, 131, 190) 0%, rgb(55, 93, 158) 99%)
+      /* IE v10+
+      background-image: -ms-linear-gradient(-90deg, rgb(81, 131, 190) 0%, rgb(55, 93, 158) 99%)
+      background-image: linear-gradient(-90deg, rgb(81, 131, 190) 0%, rgb(55, 93, 158) 99%)
+      height: 50px
+      border: 1px solid rgb(49, 85, 137)
+      /* Firefox v3.5+
+      -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.35)
+      /* Safari v3.0+ and by Chrome v0.2+
+      -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.35)
+      /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.35)
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff5183be,endColorstr=#ff375d9e,GradientType=0)"
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff5183be,endColorstr=#ff375d9e,GradientType=0)
 
-      .project_name
-        color: #fff
-        font-weight: bold
+      .span8
+        width: 618px
+
+      .icon_table_blue
+        background: url(/assets/table.png) no-repeat
+        height: 25px
+        margin: 10px
+        margin-left: 25px
+      .project-name
+        margin-top: 12px
+        font-family: Arial, Helvetica, sans-serif
+        font-size: 18px
+        line-height: 120%
+        color: rgb(255, 255, 255)
+        text-align: left
+        /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+
+        text-shadow: 0px 1px 0px rgb(40, 64, 93)
+        -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #ff28405d,Positive = true)"
+        zoom: 1
+        filter: progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #ff28405d,Positive = true)
+      .links
+        margin-top: 10px
+
+        span.delimiter
+          color: rgb(152, 176, 210)
+          margin-left: 3px
+          margin-right: 3px

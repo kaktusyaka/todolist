@@ -10,7 +10,7 @@ $ ->
   $('#new_project #project_name').on 'keydown', (e) ->
     $(this).closest('form').submit() if e.keyCode == 13
 
-  Task.init_datetimepicker()
+  Task.init()
 
 @Message =
   clear: ->
@@ -24,6 +24,11 @@ $ ->
       </div>')
 
 @Task =
+  init: ->
+    Task.init_datetimepicker()
+    Task.init_checkboxes()
+    Task.sortable()
+
   init_datetimepicker: ->
     $('.datepicker').datepicker
       onClose: (dateText, inst) ->
@@ -31,4 +36,33 @@ $ ->
       changeMonth: true
       changeYear: true
       dateFormat: 'yy-mm-dd'
+
+  init_checkboxes: ->
+    $('body').on 'change', '.task_finish', ->
+      $.ajax
+        url: $(this).attr('data-path')
+        data: { task: { finish: $(this).val() } }
+        type: 'put'
+        dataType: 'script'
+
+  sortable: ->
+    $('.tasks-list').sortable
+      axis: 'y'
+      dropOnEmpty: false
+      handle: '.handle'
+      cursor: 'crosshair'
+      items: 'div'
+      opacity: 0.4
+      scroll: true
+      #update: ->
+        #$.ajax
+          #type: 'put',
+            #data: $('#tasks-list').sortable('serialize') + '&id=<%=@user_story.id-%>',
+            #dataType: 'script',
+            #complete: function(request){
+                    #$('#tasks-list').effect('highlight');
+                  #},
+                #url: '/user_stories/prioritize_tasks'})
+            #}
+          #})
 

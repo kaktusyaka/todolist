@@ -1,12 +1,21 @@
 %div{ class: 'project', id: dom_id(project) }
-  .project_header
+  .row
     .span1
-    .span9
-      .project_name= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
-    .span2
-      = link_to 'Edit', 'javascript:;', id: "edit_#{dom_id(project)}"
-      = link_to 'Destroy', project, method: :delete, remote: true, confirm: 'Are you sure?'
-  %div{ id: "#{dom_id(project)}_new_task" }
-    = render 'tasks/form', { project: project, task: Task.new }
-  %div{ id: "#{dom_id(project)}_tasks_list" }
-    = render project.tasks
+    .span10
+      .project-header
+        .row
+          .span1
+            .icon_table_blue
+          .span8
+            .project-name= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
+            -#%div{ id: "#{dom_id(project)}_new_task" }
+              -#= render 'tasks/form', { project: project, task: Task.new }
+            -#%div{ id: "#{dom_id(project)}_tasks_list", class: 'tasks-list' }
+              -#= render project.tasks
+          .span1
+            .links
+              = link_to image_tag('edit_blue.png'), 'javascript:;', id: "edit_#{dom_id(project)}"
+              %span.delimiter
+                \|
+              = link_to image_tag('trash_blue.png'), project, method: :delete, remote: true, confirm: 'Are you sure?'
+    .span1

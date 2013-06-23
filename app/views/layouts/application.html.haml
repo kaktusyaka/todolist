@@ -9,18 +9,18 @@
     = csrf_meta_tags
   %body
     .container
+      %strong= current_user.email
+      = link_to "Sign out", destroy_user_session_path, method: :delete
       = render 'layouts/flash_messages'
       .row
         .span3
         .span6
-          .center
-            %h2 SIMPLE TODO LISTS
-          .center
-            %h4{style: 'font-weight: normal'} FROM RUBY GARAGE
+          .header-title
+            SIMPLE TODO LISTS
+            .title2 FROM RUBY GARAGE
         .span3
-      -#%strong= current_user.email
-      -#= link_to "Sign out", destroy_user_session_path, method: :delete
       = yield
-  %footer
-    %p &copy; Company 2013
-    = javascript_include_tag "application"
+    %footer
+      .footer-content
+        %p &copy; Ruby Garage
+  = javascript_include_tag "application"
