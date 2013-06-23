@@ -10,6 +10,8 @@ $ ->
   $('#new_project #project_name').on 'keydown', (e) ->
     $(this).closest('form').submit() if e.keyCode == 13
 
+  Task.init_datetimepicker()
+
 @Message =
   clear: ->
     $('.flash').remove()
@@ -20,3 +22,13 @@ $ ->
         <button class="close" data-dismiss="alert">×</button>
         ' + msg + '
       </div>')
+
+@Task =
+  init_datetimepicker: ->
+    $('.datepicker').datepicker
+      onClose: (dateText, inst) ->
+        $(inst.input).change().focusout()
+      changeMonth: true
+      changeYear: true
+      dateFormat: 'yy-mm-dd'
+

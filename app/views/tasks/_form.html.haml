@@ -1,0 +1,11 @@
+.spa12
+  .row
+    = simple_form_for [project, task], validate: true, remote: true do |f|
+      .span1
+      .span6
+        = f.input :name, placeholder: 'Task name', label: false
+      .span2
+        = f.input :deadline, as: :string, label: false, placeholder: '2013-01-28',
+                             input_html: { class: 'datepicker', id: "datepicker_#{dom_id(project)}" }
+      .span4
+        = f.button :submit, value: 'Add Task', class: 'btn btn-success'

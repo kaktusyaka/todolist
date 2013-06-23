@@ -6,3 +6,7 @@
     .span2
       = link_to 'Edit', 'javascript:;', id: "edit_#{dom_id(project)}"
       = link_to 'Destroy', project, method: :delete, remote: true, confirm: 'Are you sure?'
+  %div{ id: "#{dom_id(project)}_new_task" }
+    = render 'tasks/form', { project: project, task: Task.new }
+  %div{ id: "#{dom_id(project)}_tasks_list" }
+    = render project.tasks

@@ -28,6 +28,8 @@ gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'best_in_place'
 gem 'twitter-bootstrap-rails-confirm'
+gem 'jquery-ui-sass-rails'
+gem 'acts_as_list'
 
 group :development do
   gem "better_errors"

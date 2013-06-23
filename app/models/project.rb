@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   belongs_to :user
 
-  has_many :tasks, dependent: :destroy
+  has_many :tasks, dependent: :destroy, order: :priority
 
   attr_accessible :user_id, :name
 
