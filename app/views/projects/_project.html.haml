@@ -8,8 +8,6 @@
             .icon_table_blue
           .span8
             .project-name= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
-            -#%div{ id: "#{dom_id(project)}_new_task" }
-              -#= render 'tasks/form', { project: project, task: Task.new }
             -#%div{ id: "#{dom_id(project)}_tasks_list", class: 'tasks-list' }
               -#= render project.tasks
           .span1
@@ -17,5 +15,11 @@
               = link_to image_tag('edit_blue.png'), 'javascript:;', id: "edit_#{dom_id(project)}"
               %span.delimiter
                 \|
-              = link_to image_tag('trash_blue.png'), project, method: :delete, remote: true, confirm: 'Are you sure?'
+              = link_to image_tag('trash.png'), project, method: :delete, remote: true, confirm: 'Are you sure?'
+    .span1
+  .row
+    .span1
+    .span10
+      %div{ id: "#{dom_id(project)}_new_task", class: 'new-task' }
+        = render 'tasks/form', { project: project, task: Task.new }
     .span1

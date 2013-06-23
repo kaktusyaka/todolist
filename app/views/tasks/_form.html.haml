@@ -1,11 +1,11 @@
-.spa12
-  .row
-    = simple_form_for [project, task], validate: true, remote: true do |f|
-      .span1
-      .span6
-        = f.input :name, placeholder: 'Task name', label: false
-      .span2
-        = f.input :deadline, as: :string, label: false, placeholder: '2013-01-28',
-                             input_html: { class: 'datepicker', id: "datepicker_#{dom_id(project)}" }
-      .span4
-        = f.button :submit, value: 'Add Task', class: 'btn btn-success'
+.row
+  = simple_form_for [project, task], validate: true, html: { class: 'form-inline' }, remote: true do |f|
+    .span1
+      .icon_plus_green
+    .span5
+      = f.input :name, placeholder: 'Start typing here to create a task...', label: false
+    .span2
+      = f.input :deadline, as: :string, label: false, placeholder: 'Date', validate: false,
+                           input_html: { class: 'datepicker', id: "datepicker_#{dom_id(project)}" }
+    .span2
+      = f.button :submit, value: 'Add Task', class: 'btn btn-success'
