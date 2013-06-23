@@ -5,6 +5,10 @@ $ ->
 
   $('#new_project').on 'shown', ->
     $(this).find('form').validate()
+    $(this).find('#project_name').focus()
+
+  $('#new_project #project_name').on 'keydown', (e) ->
+    $(this).closest('form').submit() if e.keyCode == 13
 
 @Message =
   clear: ->
