@@ -1,2 +1,6 @@
 - if resource.new_record?
-  $('#new_project .modal-body').html("#{j(render 'form', project: resource)}")
+  $('#new_project .modal-body').html("#{ j(render 'form', project: resource) }")
+- else
+  $('#projects_list').append("#{ j(render 'projects/project', project: resource) }")
+  $('#new_project').modal('hide')
+  Message.show('Project has been added successfully!')

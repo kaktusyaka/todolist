@@ -5,3 +5,14 @@ $ ->
 
   $('#new_project').on 'shown', ->
     $(this).find('form').validate()
+
+@Message =
+  clear: ->
+    $('.flash').remove()
+
+  show: (msg) ->
+    Message.clear()
+    $('#flashes').append('<div class="alert flash alert-success fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        ' + msg + '
+      </div>')
