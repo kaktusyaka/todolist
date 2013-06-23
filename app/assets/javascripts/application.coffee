@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require twitter/bootstrap/rails/confirm
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require best_in_place
