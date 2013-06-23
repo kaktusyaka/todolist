@@ -26,6 +26,7 @@ gem 'inherited_resources'
 gem 'validates_timeliness'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'best_in_place'
 
 group :development do
   gem "better_errors"
