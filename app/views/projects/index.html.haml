@@ -5,10 +5,4 @@
 %br
 = link_to 'Add TODO List', '#new_project', role: 'button', class: 'btn btn-large btn-block btn-primary', :'data-toggle' => 'modal'
 = render 'overlays/projects/new_project'
-
-
-= link_to 'open', 'http://localhost:3000', 'data-toggle' => "modal", 'data-target' => "#modal"
-
-#modal.modal.fade
-  .modal-header
-  .modal-body
+= render 'overlays/tasks/edit_task'

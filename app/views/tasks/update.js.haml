@@ -1,3 +1,6 @@
 - if resource.errors.blank?
   Message.show("#{flash[:notice]}")
   $("##{ dom_id(parent) }_tasks_list").html("#{ j(render parent.tasks) }")
+  $('#edit-task').modal('hide')
+- else
+  $("#edit-task .modal-body").html("#{ j(render template: 'tasks/edit') }")

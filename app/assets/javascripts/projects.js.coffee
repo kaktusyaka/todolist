@@ -12,6 +12,13 @@ $ ->
 
   Task.init()
 
+  $('.edit-task').removeData('modal').modal
+    remote: $(this).attr('url')
+    show: false
+
+  $('body').on 'hidden', '.modal', ->
+    $(this).removeData 'modal'
+
 @Message =
   clear: ->
     $('.flash').remove()

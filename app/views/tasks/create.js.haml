@@ -4,3 +4,4 @@
   Message.show("#{flash[:notice]}")
   $("##{ dom_id(parent) }_tasks_list").html("#{ j(render parent.tasks) }")
   $("##{ dom_id(parent) }_new_task").find("input[type='text']").val('')
+  Task.sortable()

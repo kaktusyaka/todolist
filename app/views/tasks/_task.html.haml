@@ -6,7 +6,9 @@
     %span.handle= image_tag('move.png')
     %span.delimiter-grey
       \|
-    = link_to image_tag('edit_grey.png'), ''
+    = link_to image_tag('edit_grey.png'), edit_project_task_path(task.project, task), :'data-toggle' => :modal,
+                                          :'data-target' => '#edit-task', class: 'edit-task'
     %span.delimiter-grey
       \|
-    = link_to image_tag('trash_grey.png'), project_task_path(task.project, task), confirm: "Are you sure?", remote: true, method: :delete
+    = link_to image_tag('trash_grey.png'), project_task_path(task.project, task), confirm: "Are you sure?",
+                                           remote: true, method: :delete

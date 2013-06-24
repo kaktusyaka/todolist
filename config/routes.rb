@@ -1,8 +1,8 @@
 Myapp::Application.routes.draw do
   devise_for :users
 
-  resources :projects do
-    resources :tasks do
+  resources :projects, except: [:edit, :show, :new] do
+    resources :tasks, except: [:new, :show] do
       post :sort, on: :collection
     end
   end
