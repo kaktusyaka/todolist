@@ -1,6 +1,6 @@
 %tr{id: dom_id(task)}
   %td.first= check_box_tag :finish, !task.finish?, task.finish?, class: 'task_finish', :'data-path' => project_task_path(task.project, task)
-  %td.second= best_in_place task, :name, path: project_task_path(task.project, task)
+  %td.second= task.name
   %td= task.deadline
   %td.last
     %span.handle= image_tag('move.png')

@@ -7,9 +7,6 @@ $ ->
     $(this).find('form').validate()
     $(this).find('#project_name').focus()
 
-  $('#new_project #project_name').on 'keydown', (e) ->
-    $(this).closest('form').submit() if e.keyCode == 13
-
   Task.init()
 
   $('.edit-task').removeData('modal').modal
@@ -18,6 +15,11 @@ $ ->
 
   $('body').on 'hidden', '.modal', ->
     $(this).removeData 'modal'
+
+  $('#edit-task, #new_project').on 'keypress', (e) ->
+    if e.keyCode is 13
+      e.preventDefault()
+      $(this).find('form').submit()
 
 @Message =
   clear: ->
@@ -32,11 +34,12 @@ $ ->
 
 @Task =
   init: ->
-    Task.init_datetimepicker()
+    Task.init_datepicker()
     Task.init_checkboxes()
     Task.sortable()
 
-  init_datetimepicker: ->
+  init_datepicker: ->
+    $(".datepicker").find("input").removeClass("hasDatepicker").removeData("datepicker").unbind()
     $('.datepicker').datepicker
       onClose: (dateText, inst) ->
         $(inst.input).change().focusout()
