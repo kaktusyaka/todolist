@@ -12,7 +12,7 @@ $ ->
   $(".best_in_place").best_in_place()
 
   bg_resize = ->
-    $('body').css 'min-height', $(window).height() - 82
+    $('body').animate({'min-height': $(window).height() - 82}, 1000)
 
   bg_resize()
   $(window).resize ->
