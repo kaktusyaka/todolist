@@ -1,2 +1,2 @@
-$("##{ dom_id(parent) }_tasks_list").html("#{ j(render parent.tasks) }")
-Message.show('Task has been remove successfully')
+$("##{ dom_id(parent) }_tasks_list").remove()
+Message.show("#{flash[:notice]}")

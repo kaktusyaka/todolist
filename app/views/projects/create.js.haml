@@ -3,5 +3,5 @@
 - else
   $('#projects_list').append("#{ j(render 'projects/project', project: resource) }")
   $('#new_project').modal('hide')
-  Message.show('Project has been create successfully!')
+  Message.show("#{flash[:notice]}")
   $(".best_in_place").best_in_place()

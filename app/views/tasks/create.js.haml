@@ -1,6 +1,6 @@
 - if resource.new_record?
   $("##{ dom_id(parent) }_new_task").html("#{ j(render 'tasks/form', { project: parent, task: resource }) }")
 - else
-  Message.show("Task has been creat successfully")
+  Message.show("#{flash[:notice]}")
   $("##{ dom_id(parent) }_tasks_list").html("#{ j(render parent.tasks) }")
   $("##{ dom_id(parent) }_new_task").find("input[type='text']").val('')
