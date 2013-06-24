@@ -30,6 +30,8 @@ gem 'best_in_place'
 gem 'twitter-bootstrap-rails-confirm'
 gem 'jquery-ui-sass-rails'
 gem 'acts_as_list'
+gem 'ruby-progressbar'
+gem 'faker'
 
 group :development do
   gem "better_errors"
@@ -49,6 +51,5 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'capybara'
   gem 'shoulda-matchers'
-  gem 'faker'
   gem 'spork'
 end
