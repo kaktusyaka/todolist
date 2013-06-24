@@ -9,9 +9,16 @@
     = csrf_meta_tags
   %body
     .container
-      %strong= current_user.email
-      = link_to "Sign out", destroy_user_session_path, method: :delete
-      = render 'layouts/flash_messages'
+      .row
+        .span1
+        .span10
+          .current_user
+            %strong= current_user.email
+            = link_to "Sign out", destroy_user_session_path, method: :delete
+          %br
+          = render 'layouts/flash_messages'
+        .span1
+        %br
       .row
         .span3
         .span6
