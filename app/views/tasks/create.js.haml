@@ -5,3 +5,4 @@ $("##{ dom_id(parent) }_new_task").html("#{ j(render 'tasks/form', { project: pa
   $("##{ dom_id(parent) }_new_task").find("input[type='text']").val('')
   Task.sortable()
 Task.init_datepicker()
+$('form').validate()

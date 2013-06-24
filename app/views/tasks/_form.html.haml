@@ -5,7 +5,7 @@
     .span5
       = f.input :name, placeholder: 'Start typing here to create a task...', label: false
     .span2
-      = f.input :deadline, as: :string, label: false, placeholder: 'Date', validate: false,
+      = f.input :deadline, as: :string, label: false, placeholder: 'Date',
                            input_html: { class: 'datepicker', id: "datepicker_#{dom_id(project)}" }
     .span2
       = f.button :submit, value: 'Add Task', class: 'btn btn-success'
