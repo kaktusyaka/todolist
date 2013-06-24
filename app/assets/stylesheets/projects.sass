@@ -98,18 +98,19 @@
         margin-top: 8px
 
     table.tasks-list
-      tr:last-child td:first-child
-        -webkit-border-bottom-left-radius: 15px
-        border-bottom-left-radius: 15px
-        -moz-border-radius-bottomleft: 15px
-
-      tr:last-child td:last-child
-        -webkit-border-bottom-right-radius: 15px
-        border-bottom-right-radius: 15px
-        -moz-border-radius-bottomright: 15px
+      //background-color: rgb(255, 255, 255)
+      /* Firefox v3.5+
+      -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5)
+      //Safari v3.0+ and by Chrome v0.2+
+      -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5)
+      //Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5)
+      -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80000000,Positive = true)"
+      filter: progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80000000,Positive = true)
+      border-radius: 0 0 15px 15px
+      background: #fff
 
       tr
-        background: #fff
         &:hover
           background: #fcfed5
           cursor: pointer
@@ -125,6 +126,10 @@
         td.second
           width: 390px
         td.last
+          text-align: center
           border-left: 1px solid #efdadf
           width: 125px
-
+          span.delimiter-grey
+            color: rgb(204, 204, 204)
+            margin-left: 5px
+            margin-right: 5px

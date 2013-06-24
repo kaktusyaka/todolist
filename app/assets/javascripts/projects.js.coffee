@@ -49,9 +49,9 @@ $ ->
     $('.tasks-list').sortable
       axis: 'y'
       dropOnEmpty: false
-      handle: '.handle'
-      cursor: 'crosshair'
-      items: 'div'
+      handle: 'span.handle'
+      cursor: 'move'
+      items: 'tr'
       opacity: 0.4
       scroll: true
       #update: ->

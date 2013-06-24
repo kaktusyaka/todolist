@@ -3,6 +3,10 @@
   %td.second= best_in_place task, :name, path: project_task_path(task.project, task)
   %td= task.deadline
   %td.last
-    %span.handle [move]
-    = link_to "Edit"
-    = link_to "Destroy", project_task_path(task.project, task), confirm: "Are you sure?", remote: true, method: :delete
+    %span.handle= image_tag('move.png')
+    %span.delimiter-grey
+      \|
+    = link_to image_tag('edit_grey.png'), ''
+    %span.delimiter-grey
+      \|
+    = link_to image_tag('trash_grey.png'), project_task_path(task.project, task), confirm: "Are you sure?", remote: true, method: :delete
