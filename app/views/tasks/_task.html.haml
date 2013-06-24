@@ -1,10 +1,8 @@
-%div{id: dom_id(task)}
-  .spa12
-    .row
-      .span1= check_box_tag :finish, !task.finish?, task.finish?, class: 'task_finish', :'data-path' => project_task_path(task.project, task)
-      .span6= best_in_place task, :name, path: project_task_path(task.project, task)
-      .span2= task.deadline
-      .span4
-        %span.handle [move]
-        = link_to "Edit"
-        = link_to "Destroy", project_task_path(task.project, task), confirm: "Are you sure?", remote: true, method: :delete
+%tr{id: dom_id(task)}
+  %td.first= check_box_tag :finish, !task.finish?, task.finish?, class: 'task_finish', :'data-path' => project_task_path(task.project, task)
+  %td.second= best_in_place task, :name, path: project_task_path(task.project, task)
+  %td= task.deadline
+  %td.last
+    %span.handle [move]
+    = link_to "Edit"
+    = link_to "Destroy", project_task_path(task.project, task), confirm: "Are you sure?", remote: true, method: :delete

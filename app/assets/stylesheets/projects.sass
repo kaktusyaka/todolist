@@ -96,3 +96,35 @@
       input[type='submit']
         width: 92%
         margin-top: 8px
+
+    table.tasks-list
+      tr:last-child td:first-child
+        -webkit-border-bottom-left-radius: 15px
+        border-bottom-left-radius: 15px
+        -moz-border-radius-bottomleft: 15px
+
+      tr:last-child td:last-child
+        -webkit-border-bottom-right-radius: 15px
+        border-bottom-right-radius: 15px
+        -moz-border-radius-bottomright: 15px
+
+      tr
+        background: #fff
+        &:hover
+          background: #fcfed5
+          cursor: pointer
+        td
+          border-top: 1px solid #e7ebea
+        td.first
+          border-right: 1px solid #efdadf
+          width: 60px
+
+          input[type='checkbox']
+            position: absolute
+            margin-left: 25px
+        td.second
+          width: 390px
+        td.last
+          border-left: 1px solid #efdadf
+          width: 125px
+

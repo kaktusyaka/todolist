@@ -8,8 +8,7 @@
             .icon_table_blue
           .span8
             .project-name= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
-            -#%div{ id: "#{dom_id(project)}_tasks_list", class: 'tasks-list' }
-              -#= render project.tasks
+            -#%div{ id: "", class: 'tasks-list' }
           .span1
             .links
               = link_to image_tag('edit_blue.png'), 'javascript:;', id: "edit_#{dom_id(project)}"
@@ -22,4 +21,10 @@
     .span10
       %div{ id: "#{dom_id(project)}_new_task", class: 'new-task' }
         = render 'tasks/form', { project: project, task: Task.new }
+    .span1
+  .row
+    .span1
+    .span10
+      %table.table.tasks-list{ id: "#{dom_id(project)}_tasks_list" }
+        = render project.tasks
     .span1
