@@ -54,15 +54,6 @@ $ ->
       items: 'tr'
       opacity: 0.4
       scroll: true
-      #update: ->
-        #$.ajax
-          #type: 'put',
-            #data: $('#tasks-list').sortable('serialize') + '&id=<%=@user_story.id-%>',
-            #dataType: 'script',
-            #complete: function(request){
-                    #$('#tasks-list').effect('highlight');
-                  #},
-                #url: '/user_stories/prioritize_tasks'})
-            #}
-          #})
+      update: ->
+        $.post $(this).data('update-url'), $(this).sortable('serialize')
 
