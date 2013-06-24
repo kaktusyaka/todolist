@@ -52,4 +52,5 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'spork'
+  gem 'selenium-webdriver'
 end

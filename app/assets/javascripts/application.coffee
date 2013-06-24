@@ -6,6 +6,7 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require best_in_place
+//= require jquery.simulate.drag-sortable
 //= require_tree .
 
 $ ->
