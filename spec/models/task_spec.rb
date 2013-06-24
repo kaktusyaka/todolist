@@ -20,24 +20,24 @@ describe Task do
     it { should allow_mass_assignment_of(:priority) }
 
     context 'should be valid' do
-      subject { FactoryGirl.build(:task) }
+      subject { build(:task) }
       it { should be_valid }
     end
 
     context 'should not be new_record' do
-      subject { FactoryGirl.create(:task) }
+      subject { create(:task) }
       it { should_not be_new_record }
     end
   end
 
   describe 'should validates finish field' do
     context 'should be not finish' do
-      subject { FactoryGirl.create(:task) }
+      subject { create(:task) }
       it { should_not be_finish }
     end
 
     context 'should be finish' do
-      subject { FactoryGirl.create(:task, finish: true) }
+      subject { create(:task, finish: true) }
       it { should be_finish }
     end
   end

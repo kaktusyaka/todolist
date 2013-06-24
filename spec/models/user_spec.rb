@@ -20,7 +20,7 @@ describe User do
 
   context "Methods" do
     it "should save new user" do
-      user = FactoryGirl.create(:user)
+      user = create(:user)
       User.all.should include(user)
       User.count.should eq(1)
     end

@@ -17,12 +17,12 @@ describe Project do
     it { should allow_mass_assignment_of(:name) }
 
     describe 'new record should be valid' do
-      subject { FactoryGirl.build(:project) }
+      subject { build(:project) }
       it { should be_valid }
     end
 
     describe 'new record should be save' do
-      subject { FactoryGirl.create(:project) }
+      subject { create(:project) }
       it { should_not be_new_record }
     end
   end

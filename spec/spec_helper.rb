@@ -1,11 +1,8 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
-require 'faker'
-require 'factory_girl_rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
 require 'rspec/rails'
-require 'shoulda/matchers/integrations/rspec'
 require 'validates_timeliness'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -14,6 +11,8 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.mock_with :rspec
+  config.include(Devise::TestHelpers, type: :controller)
+  config.include(FactoryGirl::Syntax::Methods)
 
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
