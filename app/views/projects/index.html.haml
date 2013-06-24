@@ -1,8 +1,14 @@
 #projects_list
   = render collection
-%br
-%br
-%br
-= link_to 'Add TODO List', '#new_project', role: 'button', class: 'btn btn-large btn-block btn-primary', :'data-toggle' => 'modal'
+
+.row
+  .span4
+  .span3
+    = link_to '#new_project', role: 'button', class: 'btn btn-large btn-block btn-primary new-project-link',
+                              :'data-toggle' => 'modal' do
+      = image_tag "plus_blue.png"
+      &nbsp;
+      Add TODO List
+  .span5
 = render 'overlays/projects/new_project'
 = render 'overlays/tasks/edit_task'
