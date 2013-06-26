@@ -29,7 +29,9 @@ Feature: Testing projects
     And I confirm remove
     Then I should see delete project success message
 
-
-
-
-
+  @selenium
+  Scenario: Update exist project
+    Given I am exist and logged user with project
+    And I click on edit project link
+    And I update project name field
+    Then I should see success update project name

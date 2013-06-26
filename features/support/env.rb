@@ -11,6 +11,7 @@ Spork.prefork do
   require 'cucumber/rails'
   require 'email_spec' # add this line if you use spork
   require 'email_spec/cucumber'
+  include BestInPlace::TestHelpers
 
   Capybara.default_selector = :css
 

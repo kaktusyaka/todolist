@@ -2,6 +2,10 @@ def find_modal_element id
   page.find(id, visible: true)
 end
 
+def project_should_have_name name
+  Project.first.name.should eq(name)
+end
+
 Then /^I should see a popup window$/ do
   find_modal_element "#new_project_modal"
   page.find('#new_project_modal').should have_content "Add New TODO List"
@@ -43,6 +47,10 @@ And /^I click on delete project link$/ do
   page.find("#delete_project_1").click
 end
 
+And /^I click on edit project link$/ do
+  page.find("#edit_project_1").click
+end
+
 And /^I confirm remove$/ do
   page.find("#confirmation_dialog a.btn-primary").click
 end
@@ -50,4 +58,13 @@ end
 Then /^I should see delete project success message$/ do
   page.should have_content "Project was successfully destroyed."
   page.should_not have_content "My new super project"
+end
+
+And /^I update project name field$/ do
+  bip_text(Project.first, :name, 'Update project name')
+end
+
+And /^I should see success update project name$/ do
+  page.should have_content "Update project name"
+  project_should_have_name("Update project name")
 end
