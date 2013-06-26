@@ -1,9 +1,9 @@
 $ ->
-  $('#new_project').on 'hidden', ->
+  $('#new_project_modal').on 'hidden', ->
     $(this).find('input[type="text"]').val('').closest('.error').removeClass('error')
     $(this).find('span.help-inline').remove()
 
-  $('#new_project').on 'shown', ->
+  $('#new_project_modal').on 'shown', ->
     $(this).find('form').validate()
     $(this).find('#project_name').focus()
 
@@ -16,7 +16,7 @@ $ ->
   $('body').on 'hidden', '.modal', ->
     $(this).removeData 'modal'
 
-  $('#edit-task, #new_project').on 'keypress', (e) ->
+  $('#edit-task, #new_project_modal').on 'keypress', (e) ->
     if e.keyCode is 13
       e.preventDefault()
       $(this).find('form').submit()

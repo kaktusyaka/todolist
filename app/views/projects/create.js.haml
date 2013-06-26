@@ -1,8 +1,8 @@
 - if resource.new_record?
-  $('#new_project .modal-body').html("#{ j(render 'form', project: resource) }")
+  $('#new_project_modal .modal-body').html("#{ j(render 'form', project: resource) }")
 - else
   $('#projects_list').append("#{ j(render 'projects/project', project: resource) }")
-  $('#new_project').modal('hide')
+  $('#new_project_modal').modal('hide')
   Message.show("#{flash[:notice]}")
   $(".best_in_place").best_in_place()
   Task.init_datepicker()
