@@ -43,6 +43,10 @@ And /^I click on delete project link$/ do
   page.find("#delete_project_1").click
 end
 
+And /^I confirm remove$/ do
+  page.find("#confirmation_dialog a.btn-primary").click
+end
+
 Then /^I should see delete project success message$/ do
   page.should have_content "Project was successfully destroyed."
   page.should_not have_content "My new super project"

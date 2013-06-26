@@ -26,7 +26,7 @@ Feature: Testing projects
     Given I am exist and logged user with project
     And I click on delete project link
     And I should see delete popup window
-    And I press "Ok"
+    And I confirm remove
     Then I should see delete project success message
 
 
