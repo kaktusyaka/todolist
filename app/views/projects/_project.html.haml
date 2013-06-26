@@ -8,13 +8,12 @@
             .icon_table_blue
           .span8
             .project-name= best_in_place project, :name, activator: "#edit_#{dom_id(project)}"
-            -#%div{ id: "", class: 'tasks-list' }
           .span1
             .links
               = link_to image_tag('edit_blue.png'), 'javascript:;', id: "edit_#{dom_id(project)}"
               %span.delimiter
                 \|
-              = link_to image_tag('trash.png'), project, method: :delete, remote: true, confirm: 'Are you sure?'
+              = link_to image_tag('trash.png'), project, method: :delete, remote: true, confirm: 'Are you sure?', id: "delete_#{dom_id(project)}"
     .span1
   .row
     .span1
