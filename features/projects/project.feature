@@ -1,12 +1,23 @@
 Feature: Testing projects
 
   @selenium
-  Scenario: Create project
-    Given I exist as a user
-    And I sign in with valid data
-    When I follow "Add TODO List"
-    Then I should see a popup window
-    And I fill in "Name" with "Test Project"
+  Scenario: Create project with valid data
+    Given I am exist and logged user
+    And I create new project with valid data
+    Then I should see create project success message and project
+
+  @selenium
+  Scenario: Create project with invalid data
+    Given I am exist and logged user
+    And I create new project with invalid data
+    Then I should see validations error
+
+  @selenium
+  Scenario: Create project with invalid data the with valid
+    Given I am exist and logged user
+    And I create new project with invalid data
+    Then I should see validations error
+    When I fill in "Name" with "My new super project"
     And I press "Save"
-    Then I should see "Project was successfully created."
-    And I should see "Test Project"
+    Then I should see create project success message and project
+

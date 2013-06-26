@@ -109,3 +109,8 @@ end
 Then /^I should see successfully reset password message$/ do
   page.should have_content "Your password was changed successfully. You are now signed in."
 end
+
+Given /^I am exist and logged user$/ do
+  step %{I exist as a user}
+  step %{I sign in with valid data}
+end
