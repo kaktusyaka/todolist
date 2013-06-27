@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +32,10 @@ gem 'acts_as_list'
 gem 'ruby-progressbar'
 gem 'faker'
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem "better_errors"
   gem 'binding_of_caller'
@@ -43,6 +46,7 @@ group :development, :test do
   gem 'debugger'
   gem "rspec-rails"
   gem "factory_girl_rails"
+  gem 'sqlite3'
 end
 
 group :test do
