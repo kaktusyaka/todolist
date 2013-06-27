@@ -7,6 +7,10 @@ def create_task_for_project(task_name, project_name)
   FactoryGirl.create(:task, project_id: project.id, name: task_name)
 end
 
+def project_should_has_one_task
+  Project.first.tasks.count.should eq(1)
+end
+
 Given /^I authenticate as a user$/ do
   step %{I exist as a user}
   step %{I sign in with valid data}
@@ -32,4 +36,26 @@ end
 
 Then /^priority of "(.*)" should be (\d+)$/ do |task_name, priority|
   Task.find_by_name(task_name).priority.should eq(priority.to_i)
+end
+
+And /^I create new task with valid data$/ do
+  fill_in "task_name", with: 'New Task'
+  fill_in "task[deadline]", with: Date.today.strftime("%Y-%m-%d")
+  click_button "Add Task"
+end
+
+Then /^I should see success create task message$/ do
+  page.should have_content "New Task"
+  page.should have_content Date.today.strftime("%Y-%m-%d")
+  page.should have_content "Task was successfully created."
+  project_should_has_one_task
+end
+
+And /^I create new task with invalid data$/ do
+  click_button "Add Task"
+end
+
+Then /^I should see validation error messages$/ do
+  page.find(".task_name").should have_content "can't be blank"
+  page.find(".task_deadline").should have_content "can't be blank"
 end
