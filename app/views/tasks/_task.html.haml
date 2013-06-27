@@ -7,8 +7,8 @@
     %span.delimiter-grey
       \|
     = link_to image_tag('edit_grey.png'), edit_project_task_path(task.project, task), :'data-toggle' => :modal,
-                                          :'data-target' => '#edit-task', class: 'edit-task'
+                                          :'data-target' => '#edit-task', class: 'edit-task', id: "edit_#{dom_id(task)}"
     %span.delimiter-grey
       \|
     = link_to image_tag('trash_grey.png'), project_task_path(task.project, task), confirm: "Are you sure?",
-                                           remote: true, method: :delete
+                                           remote: true, method: :delete, id: "delete_#{dom_id(task)}"

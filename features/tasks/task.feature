@@ -20,6 +20,12 @@ Feature: Testing tasks
     And I create new task with valid data
     Then I should see success create task message
 
+  @selenium
+  Scenario: Delete exist task
+    Given I am exist and logged user with task
+    And I click task link
+    Then I should see success remove task message
+
   @wip
   @selenium
   Scenario: Dragging a task

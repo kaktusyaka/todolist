@@ -7,8 +7,8 @@ def create_task_for_project(task_name, project_name)
   FactoryGirl.create(:task, project_id: project.id, name: task_name)
 end
 
-def project_should_has_one_task
-  Project.first.tasks.count.should eq(1)
+def project_should_has_task count
+  Project.first.tasks.count.should eq(count)
 end
 
 Given /^I authenticate as a user$/ do
@@ -48,7 +48,7 @@ Then /^I should see success create task message$/ do
   page.should have_content "New Task"
   page.should have_content Date.today.strftime("%Y-%m-%d")
   page.should have_content "Task was successfully created."
-  project_should_has_one_task
+  project_should_has_task 1
 end
 
 And /^I create new task with invalid data$/ do
@@ -58,4 +58,20 @@ end
 Then /^I should see validation error messages$/ do
   page.find(".task_name").should have_content "can't be blank"
   page.find(".task_deadline").should have_content "can't be blank"
+end
+
+Given /^I am exist and logged user with task$/ do
+  step %{I am exist and logged user with project}
+  step %{I create new task with valid data}
+end
+
+And /^I click task link$/ do
+  page.find("#delete_task_1").click
+  step %{I should see delete popup window}
+  step %{I confirm remove}
+end
+
+Then /^I should see success remove task message$/ do
+  page.should have_content "Task was successfully destroyed."
+  project_should_has_task 0
 end
