@@ -11,6 +11,10 @@ def project_should_has_task count
   Project.first.tasks.count.should eq(count)
 end
 
+def task_should_has_name name
+  Project.first.tasks.first.name.should eq(name)
+end
+
 Given /^I authenticate as a user$/ do
   step %{I exist as a user}
   step %{I sign in with valid data}
@@ -74,4 +78,23 @@ end
 Then /^I should see success remove task message$/ do
   page.should have_content "Task was successfully destroyed."
   project_should_has_task 0
+end
+
+And /^I update task$/ do
+  page.find("#edit_task_1").click
+  step %{I should see edit task popup window}
+  find("#edit-task #task_name").set "Updated task name"
+  find("#edit-task #datepicker_task_1").set "#{(Date.today + 10.days).strftime("%Y-%m-%d")}"
+  click_button "Update"
+end
+
+Then /^I should see edit task popup window$/ do
+  find_modal_element "#edit-task"
+end
+
+Then /^I should see success update task message$/ do
+  page.should have_content "Updated task name"
+  page.should have_content (Date.today + 10.days).strftime("%Y-%m-%d")
+  page.should have_content "Task was successfully updated."
+  task_should_has_name "Updated task name"
 end

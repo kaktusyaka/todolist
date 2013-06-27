@@ -26,7 +26,12 @@ Feature: Testing tasks
     And I click task link
     Then I should see success remove task message
 
-  @wip
+  @selenium
+  Scenario: Update exist task
+    Given I am exist and logged user with task
+    And I update task
+    Then I should see success update task message
+
   @selenium
   Scenario: Dragging a task
     Given I exist as a user
