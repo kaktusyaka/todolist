@@ -7,13 +7,7 @@ Feature: Testing projects
     Then I should see create project success message and project
 
   @selenium
-  Scenario: Create project with invalid data
-    Given I am exist and logged user
-    And I create new project with invalid data
-    Then I should see validations error
-
-  @selenium
-  Scenario: Create project with invalid data the with valid
+  Scenario: Create project with invalid data and after that with valid data
     Given I am exist and logged user
     And I create new project with invalid data
     Then I should see validations error

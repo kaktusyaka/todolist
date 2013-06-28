@@ -7,12 +7,6 @@ Feature: Testing tasks
     Then I should see success create task message
 
   @selenium
-  Scenario: Create task with invalid data
-    Given I am exist and logged user with project
-    And I create new task with invalid data
-    Then I should see validation error messages
-
-  @selenium
   Scenario: Create new task after validation error
     Given I am exist and logged user with project
     And I create new task with invalid data
