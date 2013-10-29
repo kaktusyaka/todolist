@@ -19,7 +19,7 @@
 //= require_tree .
 
 $ ->
-  $(".best_in_place").best_in_place()
+  #$(".best_in_place").best_in_place()
 
   bg_resize = ->
     $('body').animate({'min-height': $(window).height() - 82}, 1000)

@@ -1,3 +1,4 @@
+<div id='list_of_project'></div>
 <% for project in @projects.models: %>
   <div class='project'>
     <div class='row'>
