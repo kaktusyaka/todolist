@@ -10,4 +10,8 @@ class Todolist.Views.NewProject extends Backbone.View
 
   createProject: (event) ->
     event.preventDefault()
-    @collection.create({ name: $('#new_project_name').val() })
+    attributes = name: $('#new_project_name').val()
+    @collection.create attributes,
+      wait: true
+      success: ->
+        $('#new_project_modal form')[0].reset()
