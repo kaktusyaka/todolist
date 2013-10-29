@@ -25,3 +25,15 @@
       <div class='span1'></div>
     </div>
   </div>
+<% end %>
+<div class='row'>
+  <div class='span4'></div>
+  <div class='span3'>
+    <a href='' class='btn btn-large btn-block btn-primary new-project-link'>
+      <img src='/assets/plus_blue.png'>
+      &nbsp;
+      Add TODO List
+    </a>
+  <div class='span5'></div>
+</div>
+

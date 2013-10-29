@@ -1,14 +1,5 @@
 #projects_list{ 'data-projects' => collection.to_json }
   -#= render collection
 
-.row
-  .span4
-  .span3
-    = link_to '#new_project_modal', role: 'button', class: 'btn btn-large btn-block btn-primary new-project-link',
-                              :'data-toggle' => 'modal' do
-      = image_tag "plus_blue.png"
-      &nbsp;
-      Add TODO List
-  .span5
 = render 'overlays/projects/new_project'
 = render 'overlays/tasks/edit_task'
