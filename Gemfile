@@ -31,6 +31,8 @@ gem 'jquery-ui-sass-rails'
 gem 'acts_as_list'
 gem 'ruby-progressbar'
 gem 'faker'
+gem 'backbone-on-rails'
+gem 'haml_coffee_assets'
 
 group :production do
   gem 'pg'

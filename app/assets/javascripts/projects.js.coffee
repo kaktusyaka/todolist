@@ -1,69 +1,82 @@
+window.Todolist =
+  Models: {}
+  Collections: {}
+  Views: {}
+  Routers: {}
+  initialize: ->
+    new Todolist.Routers.Projects()
+    Backbone.history.start()
+
 $ ->
-  $('#new_project_modal').on 'hidden', ->
-    $(this).find('input[type="text"]').val('').closest('.error').removeClass('error')
-    $(this).find('span.help-inline').remove()
+  Todolist.initialize()
 
-  $('#new_project_modal').on 'shown', ->
-    $(this).find('form').validate()
-    $(this).find('#project_name').focus()
 
-  Task.init()
+#$ ->
+  #$('#new_project_modal').on 'hidden', ->
+    #$(this).find('input[type="text"]').val('').closest('.error').removeClass('error')
+    #$(this).find('span.help-inline').remove()
 
-  $('.edit-task').removeData('modal').modal
-    remote: $(this).attr('url')
-    show: false
+  #$('#new_project_modal').on 'shown', ->
+    #$(this).find('form').validate()
+    #$(this).find('#project_name').focus()
 
-  $('body').on 'hidden', '.modal', ->
-    $(this).removeData 'modal'
+  #Task.init()
 
-  $('#edit-task, #new_project_modal').on 'keypress', (e) ->
-    if e.keyCode is 13
-      e.preventDefault()
-      $(this).find('form').submit()
+  #$('.edit-task').removeData('modal').modal
+    #remote: $(this).attr('url')
+    #show: false
 
-@Message =
-  clear: ->
-    $('.flash').remove()
+  #$('body').on 'hidden', '.modal', ->
+    #$(this).removeData 'modal'
 
-  show: (msg) ->
-    Message.clear()
-    $('#flashes').append('<div class="alert flash alert-success fade in">
-        <button class="close" data-dismiss="alert">×</button>
-        ' + msg + '
-      </div>')
+  #$('#edit-task, #new_project_modal').on 'keypress', (e) ->
+    #if e.keyCode is 13
+      #e.preventDefault()
+      #$(this).find('form').submit()
 
-@Task =
-  init: ->
-    Task.init_datepicker()
-    Task.init_checkboxes()
-    Task.sortable()
+#@Message =
+  #clear: ->
+    #$('.flash').remove()
 
-  init_datepicker: ->
-    $(".datepicker").find("input").removeClass("hasDatepicker").removeData("datepicker").unbind()
-    $('.datepicker').datepicker
-      onClose: (dateText, inst) ->
-        $(inst.input).change().focusout()
-      changeMonth: true
-      changeYear: true
-      dateFormat: 'yy-mm-dd'
+  #show: (msg) ->
+    #Message.clear()
+    #$('#flashes').append('<div class="alert flash alert-success fade in">
+        #<button class="close" data-dismiss="alert">×</button>
+        #' + msg + '
+      #</div>')
 
-  init_checkboxes: ->
-    $('body').on 'change', '.task_finish', ->
-      $.ajax
-        url: $(this).attr('data-path')
-        data: { task: { finish: $(this).val() } }
-        type: 'put'
-        dataType: 'script'
+#@Task =
+  #init: ->
+    #Task.init_datepicker()
+    #Task.init_checkboxes()
+    #Task.sortable()
 
-  sortable: ->
-    $('.tasks-list').sortable
-      axis: 'y'
-      dropOnEmpty: false
-      handle: 'span.handle'
-      cursor: 'move'
-      items: 'tr'
-      opacity: 0.4
-      scroll: true
-      update: ->
-        $.post $(this).data('update-url'), $(this).sortable('serialize')
+  #init_datepicker: ->
+    #$(".datepicker").find("input").removeClass("hasDatepicker").removeData("datepicker").unbind()
+    #$('.datepicker').datepicker
+      #onClose: (dateText, inst) ->
+        #$(inst.input).change().focusout()
+      #changeMonth: true
+      #changeYear: true
+      #dateFormat: 'yy-mm-dd'
+
+  #init_checkboxes: ->
+    #$('body').on 'change', '.task_finish', ->
+      #$.ajax
+        #url: $(this).attr('data-path')
+        #data: { task: { finish: $(this).val() } }
+        #type: 'put'
+        #dataType: 'script'
+
+  #sortable: ->
+    #$('.tasks-list').sortable
+      #axis: 'y'
+      #dropOnEmpty: false
+      #handle: 'span.handle'
+      #cursor: 'move'
+      #items: 'tr'
+      #opacity: 0.4
+      #scroll: true
+      #update: ->
+        #$.post $(this).data('update-url'), $(this).sortable('serialize')
 

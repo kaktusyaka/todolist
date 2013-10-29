@@ -1,5 +1,5 @@
-#projects_list
-  = render collection
+#projects_list{ 'data-projects' => collection.to_json }
+  -#= render collection
 
 .row
   .span4

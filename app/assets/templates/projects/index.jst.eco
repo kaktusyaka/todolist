@@ -1,0 +1,27 @@
+<% for project in @projects.models: %>
+  <div class='project'>
+    <div class='row'>
+      <div class='span1'></div>
+      <div class='span10'>
+        <div class='project-header'>
+          <div class='row'>
+            <div class='span1'>
+              <div class='icon_table_blue'></div>
+            </div>
+            <div class='span8'>
+              <div class='project-name'>
+                <%= project.get('name') %>
+              </div>
+            </div>
+            <div class='span1'>
+              <div class='links'>
+                <span class='delimiter'></span>
+                |
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='span1'></div>
+    </div>
+  </div>
