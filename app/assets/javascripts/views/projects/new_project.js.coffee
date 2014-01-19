@@ -1,11 +1,10 @@
-class Todolist.Views.NewProject extends Backbone.View
+class Todolist.Views.NewProject extends Backbone.Marionette.View
 
-  template: JST['projects/new']
   events:
     'submit #new_project': 'createProject'
 
   render: ->
-    $(@el).html(@template())
+    $(@el).html(Hogan.compile("projects/new"))
     this
 
   createProject: (event) ->

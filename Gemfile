@@ -32,7 +32,8 @@ gem 'acts_as_list'
 gem 'ruby-progressbar'
 gem 'faker'
 gem 'backbone-on-rails'
-gem 'haml_coffee_assets'
+gem 'marionette-rails'
+gem 'hogan_assets'
 
 group :production do
   gem 'pg'

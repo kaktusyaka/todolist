@@ -7,9 +7,10 @@
 //= require rails.validations.simple_form
 //= require best_in_place
 //= require jquery.simulate.drag-sortable
-//= require hamlcoffee
 //= require underscore
 //= require backbone
+//= require backbone.marionette
+//= require hogan
 //= require projects
 //= require_tree ../templates
 //= require_tree ./models

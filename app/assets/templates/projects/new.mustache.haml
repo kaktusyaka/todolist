@@ -1,0 +1,16 @@
+#new_project_modal.modal.hide.fade.in{"aria-hidden" => "false", "aria-labelledby" => "myModalLabel", role: "dialog", style: "display: block;", tabindex: "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+    %h3#myModalLabel Add New TODO List
+  .modal-body
+    %form#new_project.form-horizontal
+      %div{style: "margin:0;padding:0;display:inline"}
+      .control-group.string.required.project_name
+        %label.string.required.control-label{for: "project_name"}
+          %abbr{title: "required"} *
+          Name
+        .controls
+          %input#new_project_name.string.required{placeholder: "TODO Name", size: "50", type: "text"}/
+      .modal-footer
+        %button.btn{"aria-hidden" => "", "data-dismiss" => "modal"} Close
+        %input.btn.btn.btn-primary{type: "submit", value: "Save"}/
