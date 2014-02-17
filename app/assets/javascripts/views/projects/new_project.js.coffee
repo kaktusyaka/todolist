@@ -4,7 +4,7 @@ class Todolist.Views.NewProject extends Backbone.Marionette.View
     'submit #new_project': 'createProject'
 
   render: ->
-    $(@el).html(Hogan.compile("projects/new"))
+    $(@el).html(Hogan.compile["projects/new"].render())
     this
 
   createProject: (event) ->

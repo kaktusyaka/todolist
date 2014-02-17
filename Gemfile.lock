@@ -38,9 +38,6 @@ GEM
       jquery-rails
       rails (>= 3.1)
     bcrypt-ruby (3.0.1)
-    best_in_place (2.1.0)
-      jquery-rails
-      rails (~> 3.1)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -58,10 +55,6 @@ GEM
       xpath (~> 2.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
-    client_side_validations (3.2.5)
-    client_side_validations-simple_form (2.1.0)
-      client_side_validations (~> 3.2.5)
-      simple_form (~> 2.1.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -265,14 +258,11 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   backbone-on-rails
-  best_in_place
   better_errors
   binding_of_caller
   bootstrap-sass
   cancan
   capybara
-  client_side_validations
-  client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
@@ -289,7 +279,7 @@ DEPENDENCIES
   jquery-ui-sass-rails
   marionette-rails
   pg
-  rails (= 3.2.13)
+  rails (~> 3.2.13)
   rspec-rails
   ruby-progressbar
   sass-rails (~> 3.2.3)

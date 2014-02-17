@@ -1,7 +1,5 @@
 class Todolist.Views.ProjectsIndex extends Backbone.View
 
-  template: JST['projects/index']
-
   events:
     'click .new-project-link': 'showNewProjectForm'
 
@@ -10,7 +8,9 @@ class Todolist.Views.ProjectsIndex extends Backbone.View
     @collection.on('add', @render, this)
 
   render: ->
-    $(@el).html(@template(projects: @collection))
+    $(@el).html(HoganTemplates['projects/index'].render(
+      projects: @collection
+    ))
     this
 
   showNewProjectForm: (event) ->
