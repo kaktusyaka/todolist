@@ -10,13 +10,9 @@ class ProjectsController < InheritedResources::Base
     current_user
   end
 
-  def collection
-    @projects ||= end_of_association_chain
-  end
-
   def build_resource
     super.tap do |attr|
-      attr.user_id = current_user.id
+      attr.user = current_user
     end
   end
 end

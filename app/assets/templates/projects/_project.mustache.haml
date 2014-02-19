@@ -1,1 +1,20 @@
-{{name}}
+.project
+  .row
+    .span1
+    .span10
+      .project-header
+        .row
+          .span1
+            .icon_table_blue
+          .span8
+            .project-name
+              {{name}}
+          .span1
+            .links
+              %a.edit-project
+                %img{ src: '/assets/edit_blue.png' }
+              %span.delimiter
+                |
+              %a.delete-project
+                %img{ src: '/assets/trash.png' }
+    .span1

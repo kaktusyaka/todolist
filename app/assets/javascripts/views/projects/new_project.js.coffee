@@ -4,11 +4,16 @@ class Todolist.Views.NewProject extends Backbone.Marionette.View
     'submit #new_project': 'createProject'
 
   render: ->
-    $(@el).html(Hogan.compile["projects/new"].render())
-    this
+    $(@el).html(HoganTemplates["projects/new"].render())
+    @
 
-  createProject: (event) ->
-    event.preventDefault()
+  hide: ->
+    alert('s')
+    #@el.modal(true).hide()
+    #false
+
+  createProject: (e) ->
+    e.preventDefault()
     attributes = name: $('#new_project_name').val()
     @collection.create attributes,
       wait: true

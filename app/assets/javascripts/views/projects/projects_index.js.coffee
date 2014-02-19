@@ -1,11 +1,11 @@
-class Todolist.Views.ProjectsIndex extends Backbone.View
+class Todolist.Views.ProjectsIndex extends Backbone.Marionette.View
 
-  #events:
-    #'click .new-project-link': 'showNewProjectForm'
+  events:
+    'click .new-project-link': 'showNewProjectForm'
 
   initialize: ->
-    @collection.on('reset', @render, this)
-    @collection.on('add', @render, this)
+    @collection.on('reset', @render, @)
+    @collection.on('add', @render, @)
 
   appendAll: ->
     for model in @collection.models
@@ -13,7 +13,7 @@ class Todolist.Views.ProjectsIndex extends Backbone.View
 
   appendOne: (model) ->
     view = new Todolist.Views.Project(model: model)
-    @$('#list_of_project').append(view.render().el)
+    @$('#list_of_project').after(view.render().el)
 
 
   render: ->
@@ -21,7 +21,7 @@ class Todolist.Views.ProjectsIndex extends Backbone.View
     @appendAll()
     @
 
-  #showNewProjectForm: (event) ->
-    #event.preventDefault()
-    #new_project_view = new Todolist.Views.NewProject(collection: @collection)
-    #$(new_project_view.render().el).modal('show')
+  showNewProjectForm: (e) ->
+    e.preventDefault()
+    new_project_view = new Todolist.Views.NewProject(collection: @collection)
+    $(new_project_view.render().el).modal('show')

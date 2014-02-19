@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
 
   has_many :tasks, dependent: :destroy, order: :priority
 
-  attr_accessible :user_id, :name
+  attr_accessible :user, :name
 
   validates :user, presence: true
   validates :name, presence: true, length: { maximum: 255 }
