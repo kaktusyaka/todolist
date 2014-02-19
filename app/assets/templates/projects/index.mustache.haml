@@ -1,21 +1,21 @@
 #list_of_project
-- for project in @projects.models:
-  .project
-    .row
-      .span1
-      .span10
-        .project-header
-          .row
-            .span1
-              .icon_table_blue
-            .span8
-              .project-name
-                = project.get('name')
-            .span1
-              .links
-                %span.delimiter
-                |
-      .span1
+-#- for project in @projects.models:
+  -#.project
+    -#.row
+      -#.span1
+      -#.span10
+        -#.project-header
+          -#.row
+            -#.span1
+              -#.icon_table_blue
+            -#.span8
+              -#.project-name
+                -#= project.get('name')
+            -#.span1
+              -#.links
+                -#%span.delimiter
+                -#|
+      -#.span1
 .row
   .span4
   .span3
